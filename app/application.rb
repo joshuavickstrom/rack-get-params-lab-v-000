@@ -30,6 +30,12 @@ class Application
   end
 
   def cart(/cart/)
-
+    if @@cart.empty?(/cart/)
+      return "Your cart is empty"
+    else
+      @@cart.each do |purchase|
+        resp.write "#{purchase}\n"
+      end
+    end
   end
 end
