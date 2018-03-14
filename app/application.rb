@@ -22,6 +22,8 @@ class Application
           resp.write "#{purchase}\n"
         end
       end
+    elsif req.path.match(/add/)
+      binding.pry
     else
       resp.write "Path Not Found"
     end
