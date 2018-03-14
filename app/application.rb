@@ -1,7 +1,6 @@
 class Application
 
   @@items = ["Apples","Carrots","Pears"]
-  @@cart = []
 
   def call(env)
     resp = Rack::Response.new
@@ -29,13 +28,4 @@ class Application
     end
   end
 
-  def cart
-    if @@cart.empty?(/cart/)
-      return "Your cart is empty"
-    else
-      @@cart.each do |purchase|
-        resp.write "#{purchase}\n"
-      end
-    end
-  end
 end
